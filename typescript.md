@@ -80,7 +80,7 @@ Enums in TypeScript can be a useful tool for defining a set of constant values. 
 
 4. **Confusing Output**: The compiled JavaScript for an enum can be confusing because it includes both the named properties you defined and number keys with a string value representing the named constant¹.
 
-As a result, some developers recommend using alternatives to enums, such as objects or types³. These alternatives can provide similar functionality to enums but without some of the drawbacks. However, like any tool, enums have their place and can be useful in certain situations. It's important to understand their behavior and trade-offs to make an informed decision about when to use them.
+As a result, some developers recommend using alternatives to enums, such as objects or types. These alternatives can provide similar functionality to enums but without some of the drawbacks. However, like any tool, enums have their place and can be useful in certain situations. It's important to understand their behavior and trade-offs to make an informed decision about when to use them.
 
 ```typescript
 // Bad
