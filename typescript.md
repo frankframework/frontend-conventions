@@ -76,7 +76,7 @@ Enums in TypeScript can be a useful tool for defining a set of constant values. 
 
 2. **Loose Type Safety**: Enums in TypeScript are not as type-safe as you might expect. For example, if you pass a number to a function that expects an enum, TypeScript will not raise a compile-time error. This can lead to bugs that are hard to track down.
 
-3. **Code Size and Performance**: Excessive use of regular enums can lead to code size issues, security issues, scalability issues, and maintainability issues³.
+3. **Code Size and Performance**: Excessive use of regular enums can lead to code size issues, security issues, scalability issues, and maintainability issues.
 
 4. **Confusing Output**: The compiled JavaScript for an enum can be confusing because it includes both the named properties you defined and number keys with a string value representing the named constant¹.
 
