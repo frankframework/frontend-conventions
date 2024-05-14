@@ -72,7 +72,7 @@ function numberToString(value: number): string {
 
 Enums in TypeScript can be a useful tool for defining a set of constant values. However, there are several reasons why their use can be considered problematic:
 
-1. **Unexpected Behavior**: TypeScript enums are essentially objects with keys and values¹. When enum variant values are not explicitly assigned, they are automatically assigned numeric values starting from 0². This means that the first enum value variant is falsy, while every other value is truthy². This can lead to unexpected behavior in your code.
+1. **Unexpected Behavior**: TypeScript enums are essentially objects with keys and values. When enum variant values are not explicitly assigned, they are automatically assigned numeric values starting from 0. This means that the first enum value variant is falsy, while every other value is truthy. This can lead to unexpected behavior in your code.
 
 2. **Loose Type Safety**: Enums in TypeScript are not as type-safe as you might expect. For example, if you pass a number to a function that expects an enum, TypeScript will not raise a compile-time error¹. This can lead to bugs that are hard to track down.
 
