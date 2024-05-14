@@ -69,9 +69,18 @@ function numberToString(value: number): string {
 ```
 
 ### Enums
-1. **Limited Flexibility**: TypeScript enums are limited in functionality compared to other constructs like objects or union types. For example, you can't have enums with computed or string values.
-2. **No Type Safety Across Enums**: Enums in TypeScript are not type-safe across different enum types. This means you can mistakenly assign a value of one enum type to a variable of another enum type, which might lead to unexpected behavior or errors.
-3. **Runtime Overhead**: Enums are compiled into JavaScript, where they're represented as objects. If you have a large enum, this could introduce some overhead in terms of memory usage and performance.
+
+Enums in TypeScript can be a useful tool for defining a set of constant values. However, there are several reasons why their use can be considered problematic:
+
+1. **Unexpected Behavior**: TypeScript enums are essentially objects with keys and values¹. When enum variant values are not explicitly assigned, they are automatically assigned numeric values starting from 0². This means that the first enum value variant is falsy, while every other value is truthy². This can lead to unexpected behavior in your code.
+
+2. **Loose Type Safety**: Enums in TypeScript are not as type-safe as you might expect. For example, if you pass a number to a function that expects an enum, TypeScript will not raise a compile-time error¹. This can lead to bugs that are hard to track down.
+
+3. **Code Size and Performance**: Excessive use of regular enums can lead to code size issues, security issues, scalability issues, and maintainability issues³.
+
+4. **Confusing Output**: The compiled JavaScript for an enum can be confusing because it includes both the named properties you defined and number keys with a string value representing the named constant¹.
+
+As a result, some developers recommend using alternatives to enums, such as objects or types³. These alternatives can provide similar functionality to enums but without some of the drawbacks. However, like any tool, enums have their place and can be useful in certain situations. It's important to understand their behavior and trade-offs to make an informed decision about when to use them.
 
 ```typescript
 // Bad
