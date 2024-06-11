@@ -2,7 +2,8 @@
 
 <!-- TOC -->
 * [Angular related conventions](#angular-related-conventions)
-  * [Project](#project)
+  * [Library Project](#library-project)
+  * [App Project](#app-project)
     * [Folder structure](#folder-structure)
   * [Views (html files)](#views-html-files)
     * [String interpolation and binding](#string-interpolation-and-binding)
@@ -11,7 +12,11 @@
       * [For loops](#for-loops)
 <!-- TOC -->
 
-## Project
+## Library Project
+[Angular Library Example](https://github.com/Matthbo/angular-lib-poc) is an example of how the project structure of an Angular Library project should be.
+At a later date we'll add a template project that can be used as a starter for new Angular Library projects
+
+## App Project
 
 ### Folder structure
 A nested file structure is preferred over a flat file structure. Each component can be found in the folder of it's parent (the page). "Shared" components can be places in the `components`folder in the app directory. 
