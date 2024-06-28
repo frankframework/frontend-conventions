@@ -5,7 +5,6 @@
   * [Types](#types)
     * [Utility types](#utility-types)
       * [Record](#record)
-        * [Example](#example)
     * [Casting number to string](#casting-number-to-string)
     * [Enums](#enums)
     * [String manipulation](#string-manipulation)
@@ -13,6 +12,8 @@
     * [Subject as Observable notation](#subject-as-observable-notation)
     * [Class member ordering](#class-member-ordering)
     * [Read-only constant values](#read-only-constant-values)
+  * [Methods](#methods)
+    * [Maximum method parameters and options object](#maximum-method-parameters-and-options-object)
 <!-- TOC -->
 
 ## Types
@@ -259,4 +260,30 @@ private readonly DEFAULT_LOADED = true;
 
 // Good
 readonly DEFAULT_LOADED = true;
+```
+
+## Methods
+
+### Maximum method parameters and options object
+
+When using a method with more than 3 parameters, it's mandatory to use an options object to group the parameters.
+This is to avoid the problem of having to change the order of the parameters when adding a new parameter. 
+And it's also to make it easier to read the method signature.
+
+When multiple parameters are used, it's good practice to place the options object as the last parameter.
+
+```typescript
+// Bad
+function compare(a: number, b: number, reversed: true, absolute: true): number {
+    // implementation
+}
+
+compare(1, 2, true, true);
+
+// Good
+function compareGood(a: number, b: number, options: { reversed: true, absolute: true }): number {
+    // implementation
+}
+
+compare(1, 2, { reversed: true, absolute: true });
 ```
